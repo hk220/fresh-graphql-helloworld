@@ -1,6 +1,10 @@
 import { HandlerContext } from "$fresh/server.ts";
 
-const query = "{greeting}";
+const query = `
+query helloworld {
+  greeting(name: "world")
+}
+`;
 
 async function graphql<T>(
   query: string,

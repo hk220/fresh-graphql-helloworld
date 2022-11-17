@@ -3,13 +3,13 @@ import { graphql, buildSchema } from "graphql";
 
 const schema = buildSchema(`
   type Query {
-    greeting: String
+    greeting(name: String!): String
   }
 `)
 
 const rootValue = {
-  greeting: () => {
-    return "Hello!";
+  greeting: (args) => {
+    return "Hello " + args.name + "!";
   }
 }
 
